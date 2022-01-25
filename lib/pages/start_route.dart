@@ -14,10 +14,6 @@ class StartRoutState extends State<StartRoute> {
   String? _errorSecondText;
   int? firstValue;
   int? secondValue;
-  int result = 0;
-  // get() {
-  //   generateRandom(firstValue ?? 0,secondValue ?? 0);
-  // }
 
   @override
   Widget build(BuildContext context) {
@@ -66,8 +62,8 @@ class StartRoutState extends State<StartRoute> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const ResultRoute(
-                              result: 0 ,
+                        builder: (context) => ResultRoute(
+                              result: generateRandom(firstValue ?? 0, secondValue ?? 0) ,
                             )));
               },
               child: const Text('Generate'))
@@ -75,7 +71,6 @@ class StartRoutState extends State<StartRoute> {
       )),
     );
   }
-  String r() => "5";
 
   String? errorFirstText() => _errorFirstText;
   String? errorSecondText() => _errorSecondText;
