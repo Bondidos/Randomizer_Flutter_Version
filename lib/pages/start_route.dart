@@ -119,12 +119,8 @@ class StartRoutState extends State<StartRoute> {
 
   int _generateRandom(int first, int second) {
     var _generator = Random();
-//todo random not correct working
-    int _result = 0;
-    while (_result <= first-1 || _result == second) {
-      _result = _generator.nextInt(++second);
-    }
-    return _result;
+    int _result = _generator.nextInt(second - first + 1);
+    return first +_result;
   }
 
   void _navigateToResultRouteAndGetResult(BuildContext context) async{
